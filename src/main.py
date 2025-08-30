@@ -1,6 +1,6 @@
 import time
 from display.epaper import EPaperDisplay
-from widgets import Widget1, Widget2  # Example widget imports
+from widgets import ClockWidget, TextWidget  # Import the widgets you want
 
 def main():
     # Initialize the e-paper display
@@ -8,15 +8,15 @@ def main():
     display.initialize()
 
     # Create widget instances
-    widget1 = Widget1()
-    widget2 = Widget2()
+    clock_widget = ClockWidget(x=10, y=10, time_format="%H:%M:%S")
+    text_widget = TextWidget(text="you are the best", x=10, y=50)
 
     # Main loop to update widgets
     try:
         while True:
             display.clear()
-            widget1.render(display)
-            widget2.render(display)
+            clock_widget.render(display)
+            text_widget.render(display)
             display.update()
             time.sleep(60)  # Update every 60 seconds
     except KeyboardInterrupt:

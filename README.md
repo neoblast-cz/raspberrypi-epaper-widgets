@@ -14,7 +14,7 @@ This project is designed to display various widgets on a Waveshare 7.5-inch e-pa
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/raspberrypi-epaper-widgets.git
+   git clone https://github.com/neoblast-cz/raspberrypi-epaper-widgets.git
    cd raspberrypi-epaper-widgets
    ```
 

@@ -1,3 +1,5 @@
+import datetime
+
 class Widget:
     def render(self):
         raise NotImplementedError("Render method must be implemented by subclasses.")
@@ -32,3 +34,13 @@ class ProgressBarWidget(Widget):
     def render(self, display):
         percentage = self.value / self.max_value
         display.draw_rectangle(self.x, self.y, self.width * percentage, self.height)
+
+class ClockWidget(Widget):
+    def __init__(self, x, y, time_format="%H:%M:%S"):
+        self.x = x
+        self.y = y
+        self.time_format = time_format
+
+    def render(self, display):
+        now = datetime.datetime.now().strftime(self.time_format)
+        display.draw_text(self.x, self.y, now)
