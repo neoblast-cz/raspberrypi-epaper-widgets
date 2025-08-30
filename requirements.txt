@@ -1,0 +1,4 @@
+Flask
+spidev
+Pillow
+RPi.GPIO
