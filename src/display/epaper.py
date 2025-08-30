@@ -1,6 +1,7 @@
 from time import sleep
 import spidev
 import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)  # or GPIO.setmode(GPIO.BOARD)
 
 class EPaperDisplay:
     def __init__(self, width, height, cs_pin, dc_pin, reset_pin):
@@ -13,7 +14,6 @@ class EPaperDisplay:
         self.init_display()
 
     def init_display(self):
-        GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.cs_pin, GPIO.OUT)
         GPIO.setup(self.dc_pin, GPIO.OUT)
         GPIO.setup(self.reset_pin, GPIO.OUT)
