@@ -3,8 +3,15 @@ from display.epaper import EPaperDisplay
 from widgets import ClockWidget, TextWidget  # Import the widgets you want
 
 def main():
+    # Set display parameters
+    width = 800
+    height = 480
+    cs_pin = 8      # Chip select (GPIO8, physical pin 24)
+    dc_pin = 25     # Data/command (GPIO25, physical pin 22)
+    reset_pin = 17  # Reset (GPIO17, physical pin 11)
+
     # Initialize the e-paper display
-    display = EPaperDisplay()
+    display = EPaperDisplay(width, height, cs_pin, dc_pin, reset_pin)
     display.initialize()
 
     # Create widget instances
